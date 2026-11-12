@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: agen-ai-video-studio
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
+      - key: OPENAI_IMAGE_MODEL
+        value: gpt-image-1
+      - key: FLASK_SECRET_KEY
+        generateValue: true
